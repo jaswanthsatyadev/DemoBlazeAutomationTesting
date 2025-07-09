@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Editors
+.vscode/
+.idea/
+
+# Pytest
+.pytest_cache/
+.coverage
+.coverage.*
+.cache/
+
+# Reports
+report.html
+
+# Virtual environment
+virtualenv/
+virtual-env/
+v_env/
+env/
+venv/
+
+#My Stuff
+
+project_explanation.txt
+README.md
+todo.md

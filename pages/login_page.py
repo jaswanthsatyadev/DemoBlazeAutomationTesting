@@ -7,6 +7,7 @@ class LoginPage(BasePage):
     PASSWORD_FIELD = (By.ID, "loginpassword")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "#logInModal .btn-primary")
     WELCOME_USER = (By.ID, "nameofuser")
+    CLOSE_LOGIN_BUTTON = (By.CSS_SELECTOR, "#logInModal .close")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -50,5 +51,8 @@ class LoginPage(BasePage):
 
     def get_welcome_message(self):
         return self.find_element(self.WELCOME_USER).text
+
+    def close_login_modal(self):
+        self.click_element(self.CLOSE_LOGIN_BUTTON)
 
 

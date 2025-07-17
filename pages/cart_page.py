@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 
 class CartPage(BasePage):
@@ -12,6 +13,7 @@ class CartPage(BasePage):
         self.driver.get("https://www.demoblaze.com/cart.html")
 
     def get_products_in_cart(self):
+        self.wait.until(EC.presence_of_element_located(self.PRODUCT_IN_CART))
         products = self.driver.find_elements(*self.PRODUCT_IN_CART)
         return [product.text for product in products]
 

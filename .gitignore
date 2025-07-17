@@ -1,3 +1,6 @@
+#git
+.gitignore
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.pyc
@@ -36,6 +39,6 @@ venv/
 
 #My Stuff
 
-project_explanation.txt
+project_explanation.md
 README.md
 todo.md

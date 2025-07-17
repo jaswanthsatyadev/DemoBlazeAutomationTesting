@@ -12,6 +12,7 @@ class DemoblazeAPI:
         headers = {"Content-Type": "application/json"}
         payload = {"username": username, "password": password}
         response = self.session.post(url, headers=headers, data=json.dumps(payload))
+        print(f"Login request to {url} with payload {payload} responded with {response.status_code} and text: {response.text}")
         return response
 
     def get_products(self):
@@ -22,8 +23,15 @@ class DemoblazeAPI:
     def add_to_cart(self, product_id, cookie):
         url = f"{self.base_url}addtocart"
         headers = {"Content-Type": "application/json"}
-        payload = {"id": product_id, "cookie": cookie, "prod_id": product_id}
+        import uuid
+        payload = {
+            "id": str(uuid.uuid4()), 
+            "cookie": cookie, 
+            "prod_id": product_id, 
+            "flag": True
+        }
         response = self.session.post(url, headers=headers, data=json.dumps(payload))
+        print(f"Add to cart request to {url} with payload {payload} responded with {response.status_code} and text: {response.text}")
         return response
 
     def get_cart(self, cookie):
@@ -31,6 +39,7 @@ class DemoblazeAPI:
         headers = {"Content-Type": "application/json"}
         payload = {"cookie": cookie}
         response = self.session.post(url, headers=headers, data=json.dumps(payload))
+        print(f"Place order request to {url} with payload {payload} responded with {response.status_code} and text: {response.text}")
         return response
 
     def delete_from_cart(self, product_id, cookie):

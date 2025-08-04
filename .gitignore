@@ -27,8 +27,7 @@ dist/
 .coverage.*
 .cache/
 
-# Reports
-report.html
+
 
 # Virtual environment
 virtualenv/
@@ -40,5 +39,3 @@ venv/
 #My Stuff
 
 project_explanation.md
-README.md
-todo.md

@@ -49,7 +49,7 @@ By adhering to the POM, the UI test scripts in `tests/test_login.py` are clean, 
 
 
 
-
+(Due to some issues with the demoblaze platform I am unable to showcase this )
 ## 3. API Testing Components (Requests, Pytest)
 
 API testing is a crucial part of ensuring the backend functionality and data integrity of the application. In this project, the `requests` library is used to interact with the Demoblaze API endpoints, and Pytest is used to structure and execute these API tests.
@@ -143,37 +143,5 @@ While running the UI tests in the sandbox environment encountered issues due to 
 
 This structured approach to configuration, reporting, and execution makes the project easy to set up, run, and interpret results, making it a valuable demonstration of automation testing skills.
 
-
-
-### Updated Page Object Model (POM) Classes
-
-With the addition of new test functionalities, the `pages` directory has been expanded to include:
-
-*   `product_page.py`: This class represents the individual product detail page. It includes locators for elements like the 'Add to Cart' button, product name, and price. It also provides methods to retrieve product information and add the product to the cart, handling the confirmation alert.
-*   `cart_page.py`: This class models the shopping cart page. It defines locators for products listed in the cart, the 'Place Order' button, and the total price. Methods are available to retrieve products currently in the cart and to initiate the order placement process.
-*   `order_page.py`: This class represents the order placement form and confirmation. It contains locators for all the fields required to fill out the order details (name, country, city, credit card, month, year) and the 'Purchase' button. It also includes methods to fill the form, click purchase, and retrieve the purchase confirmation message.
-*   `contact_page.py`: This class represents the 'Contact' modal. It defines locators for the contact email, name, and message fields, as well as the 'Send message' button. It provides methods to fill out the contact form and send the message, handling the success alert.
-
-These new page objects further enhance the modularity and maintainability of the UI test suite, allowing for clear separation of concerns and easier test development.
-
-### New UI Test Cases
-
-Corresponding to the new page objects, the `tests` directory now includes:
-
-*   `test_cart.py`: Contains test cases for adding items to the shopping cart and verifying their presence in the cart. This ensures the functionality of adding products and managing the cart is working correctly.
-*   `test_order.py`: Includes test cases for the end-to-end order placement process. This involves adding a product to the cart, navigating to the cart, proceeding to checkout, filling in the order details, and confirming the purchase. This test validates the entire purchase flow.
-*   `test_contact.py`: Focuses on testing the 'Contact' functionality. It verifies that users can successfully send messages through the contact form and receive the appropriate confirmation.
-
-These new UI tests provide broader coverage of the Demoblaze application, ensuring that critical user flows are thoroughly tested and validated. The use of the Page Object Model makes these tests robust and adaptable to potential UI changes.
-
-
-
-### New API Test Cases
-
-In addition to the login API tests, `test_api.py` has been extended to include:
-
-*   `test_add_item_to_cart_api`: This test verifies the functionality of adding a product to the cart directly via the API. It first logs in to obtain an authentication token (cookie) and then uses this token to send a request to the `/addtocart` endpoint. The test asserts that the API call is successful and the product is added as expected.
-*   `test_place_order_api`: This test covers the end-to-end order placement process through the API. Similar to the add-to-cart test, it first logs in and adds an item to the cart. Subsequently, it sends a request to the `/placeorder` endpoint with mock order details. The test validates that the order is successfully placed and a confirmation is received from the API.
-
-These API tests ensure that the core business logic related to cart management and order processing is functioning correctly at the backend level, independent of the UI. This provides a faster and more stable way to validate these critical functionalities.
+rder processing is functioning correctly at the backend level, independent of the UI. This provides a faster and more stable way to validate these critical functionalities.
 
